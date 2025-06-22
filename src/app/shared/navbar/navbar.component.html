@@ -1,1 +1,43 @@
-<p class="text-blue">navbar works!</p>
+<header class="pt-12">
+  <div class="container rounded-xl bg-grey flex items-center justify-between px-10 py-5">
+    <div>
+      <p class="text-h3 leading-tight">Dwayne</p>
+      <p class="leading-tight">the Developer</p>
+    </div>
+    <nav class="hidden md:block">
+      <ul class="flex items-center justify-between gap-x-7">
+        @for (item of navItems; track item.url) {
+          <li>
+            <a [href]="item.url" class="text-lg hover:text-blue transition-colors duration-300">{{item.title}}</a>
+          </li>
+        }
+      </ul>
+    </nav>
+    <div class="md:hidden">
+      <button (click)="toggleMobileMenu()" class="text-white bg-black focus:outline-none focus:ring-2 focus:ring-blue rounded p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          @if (!isMobileMenuOpen) {
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> } @else {
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path> }
+        </svg>
+      </button>
+    </div>
+
+  </div>
+  <ul [@slideDownUp]="isMobileMenuOpen ? 'open' : 'closed'"
+      class="md:hidden container mt-4 bg-grey rounded-xl p-4 transition-all duration-300 ease-in-out origin-top"
+      [class.hidden]="!isMobileMenuOpen" >
+    @for (item of navItems; track item.url) {
+      <li>
+        <a [href]="item.url"
+           (click)="toggleMobileMenu()"
+            class="block text-lg py-2 px-4 hover:text-blue rounded transition-colors duration-300">
+          {{ item.title }}
+        </a>
+      </li>
+    }
+    @empty {
+      <p class="text-gray-400">No navigation items available.</p>
+    }
+  </ul>
+</header>
