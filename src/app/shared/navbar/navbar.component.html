@@ -24,20 +24,20 @@
     </div>
 
   </div>
-  <ul [@slideDownUp]="isMobileMenuOpen ? 'open' : 'closed'"
-      class="md:hidden container mt-4 bg-grey rounded-xl p-4 transition-all duration-300 ease-in-out origin-top"
-      [class.hidden]="!isMobileMenuOpen" >
-    @for (item of navItems; track item.url) {
-      <li>
-        <a [href]="item.url"
-           (click)="toggleMobileMenu()"
-            class="block text-lg py-2 px-4 hover:text-blue rounded transition-colors duration-300">
-          {{ item.title }}
-        </a>
-      </li>
-    }
-    @empty {
-      <p class="text-gray-400">No navigation items available.</p>
-    }
-  </ul>
+  @if (isMobileMenuOpen) {
+    <ul @slideDownUp class="md:hidden container mt-4 bg-grey rounded-xl p-4 overflow-hidden">
+      @for (item of navItems; track item.url) {
+        <li>
+          <a [href]="item.url"
+             (click)="toggleMobileMenu()"
+             class="block text-lg py-2 px-4 hover:text-blue rounded transition-colors duration-300">
+            {{ item.title }}
+          </a>
+        </li>
+      }
+      @empty {
+        <p class="text-gray-400">No navigation items available.</p>
+      }
+    </ul>
+  }
 </header>
