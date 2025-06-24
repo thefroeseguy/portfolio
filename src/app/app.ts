@@ -1,17 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {NavbarComponent} from './shared/navbar/navbar.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    NavbarComponent
+    NavbarComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
-  protected title = 'portfolio-site';
-}
+export class App {}
