@@ -10,6 +10,7 @@ module.exports = {
   theme: {
     screens: breakpoints,
     fontFamily: {
+      primary: ['Roboto', 'sans-serif']
     },
     container: {
       center: true,
