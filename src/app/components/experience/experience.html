@@ -1,0 +1,16 @@
+<div class="bg-grey flex items-center p-10 rounded-xl flex-1">
+  <div>
+    @if (currentEmployer) {
+      <div class="pb-5">
+        <p>Current Employer</p>
+        <h3 class="text-5xl">{{ currentEmployer }}</h3>
+      </div>
+    }
+    @if (currentPosition) {
+      <div>
+        <p>Current Position</p>
+        <h3 class="text-5xl">{{ currentPosition }}</h3>
+      </div>
+    }
+  </div>
+</div>
