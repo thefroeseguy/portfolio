@@ -6,5 +6,11 @@
     @if (description) {
       <p class="text-xl">{{ description }}</p>
     }
+    <app-button
+      [variant]="'link'"
+      [href]="'#contact'"
+      [text]="'Contact me'"
+      [classes]="'mt-5'"
+    ></app-button>
   </div>
 </section>

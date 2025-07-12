@@ -3,6 +3,7 @@ import { Hero } from '../../components/hero/hero';
 import {About} from '../../components/about/about';
 import {Experience} from '../../components/experience/experience';
 import {Footer} from '../../components/footer/footer';
+import {ContactForm} from '../../components/contact-form/contact-form';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,8 @@ import {Footer} from '../../components/footer/footer';
     Hero,
     About,
     Experience,
-    Footer
+    Footer,
+    ContactForm
   ],
   templateUrl: './home.html',
   standalone: true,

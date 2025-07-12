@@ -1,0 +1,19 @@
+<div class="flex">
+  @if (variant() === 'button') {
+    <button
+      [attr.type]="type()"
+      [class]="buttonClasses"
+    >
+      {{ text() }}
+    </button>
+  }
+
+  @if (variant() === 'link') {
+    <a
+      [href]="href()"
+      [class]="buttonClasses"
+    >
+      {{ text() }}
+    </a>
+  }
+</div>
